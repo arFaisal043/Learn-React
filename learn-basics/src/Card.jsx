@@ -1,4 +1,8 @@
+import { useRef } from "react";
+
 const Card = (props) => {
+  const descriptionRef = useRef(null);
+
   const { heading, description, btn, status } = props;
 
   const statusColor = {
@@ -6,6 +10,10 @@ const Card = (props) => {
     pending: "bg-blue-500",
     cancelled: "bg-red-500",
   };
+
+  const handleButtonClick = () => {
+    descriptionRef.current.className="text-blue-500"
+  }
 
   return (
     <div className="border m-5 p-5 space-y-3">
@@ -18,9 +26,16 @@ const Card = (props) => {
           </p>
         )}
       </div>
-      {description && <p className="italic">{description}</p>}
+      {description && (
+        <p ref={descriptionRef} className="italic">
+          {description}
+        </p>
+      )}
       {btn && (
-        <button className="border px-2 py-1 bg-blue-300 hover:bg-blue-500 text-white cursor-pointer">
+        <button
+          onClick={handleButtonClick}
+          className="border px-2 py-1 bg-blue-300 hover:bg-blue-500 text-white cursor-pointer"
+        >
           {btn}
         </button>
       )}
