@@ -36,7 +36,7 @@ const FormHandler = () => {
           }}
           className="border px-2 py-1 text-black m-3"
           placeholder="Your Email"
-          type="text"
+          type="email"
         />
         <button className="bg-blue-500 m-3 px-5 py-1 rounded-2xl">
           Submit
