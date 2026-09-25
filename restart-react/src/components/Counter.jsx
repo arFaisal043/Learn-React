@@ -1,0 +1,24 @@
+import { useState } from "react";
+
+const Counter = () => {
+    const [val, setVal] = useState(0);
+
+    function incrementValue() {
+        setVal((val) => val + 1)
+    }
+
+    function decrementValue() {
+        setVal((val) => val - 1);
+    }
+
+
+    return (
+        <div>
+            <h1>Count Value {val}</h1>
+            <button onClick={incrementValue} className="bg-blue-400">count</button>
+            <button onClick={decrementValue} className="bg-green-600">count</button>
+        </div>
+    );
+};
+
+export default Counter;

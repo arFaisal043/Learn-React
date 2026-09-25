@@ -1,0 +1,7 @@
+1. What is React and Why we use it?
+2. Real DOM vs Virtual DOM
+3. Setup
+4. JSX
+5. React Hooks
+    - useState - for state management
+6. Form Handling
