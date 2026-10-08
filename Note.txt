@@ -91,3 +91,153 @@ const FormHandler = () => {
 };
 
 export default FormHandler;
+
+
+
+____________ Props ________________________
+
+import Card from "./components/Card";
+
+const App = () => {
+
+  const projectData = [
+    {
+      image: "https://ln.run/ONHm3",
+      title: "Portfolio Website",
+      description:
+        "A personal portfolio built with React and Tailwind CSS to showcase projects.",
+      github: "Github",
+      link: "Live",
+    },
+    {
+      image: "https://ln.run/ONHm3",
+      title: "E-Commerce App",
+      description:
+        "Full-stack shopping platform with cart, payment, and admin dashboard.",
+      github: "Github",
+      link: "Live",
+    },
+    {
+      image: "https://ln.run/ONHm3",
+      title: "Weather Dashboard",
+      description:
+        "Real-time weather app using OpenWeather API with location search.",
+      github: "Github",
+      link: "Live",
+    },
+    {
+      image: "https://ln.run/ONHm3",
+      title: "Task Manager",
+      description:
+        "A productivity app for managing daily tasks with drag-and-drop support.",
+      github: "Github",
+      link: "Live",
+    },
+    {
+      image: "https://ln.run/ONHm3",
+      title: "Blog Platform",
+      description:
+        "Markdown-based blogging site with authentication and comment system.",
+      github: "Github",
+      link: "Live",
+    },
+  ];
+
+  // projectData.forEach((val) => {
+  //   console.log(val.title);
+  // })
+
+  return (
+    <div>
+      {projectData.map((val, idx) => {
+        return (
+          // pass props in card components
+          <Card
+            key={idx}
+            image={val?.image}
+            title={val?.title}
+            description={val?.description}
+            github={val?.github}
+            link={val?.link}
+          />
+        );
+      })}
+    </div>
+  );
+};
+
+export default App;
+
+const Card = (props) => {
+    const { image, title, description, github, link } = props;
+    return (
+      <div className="max-w-sm border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-md transition m-4">
+        <img
+          className="h-48 w-full object-cover"
+          src={image}
+          alt={title}
+        />
+        <div className="p-4">
+          <h1 className="text-xl font-semibold text-gray-800">
+            {title}
+          </h1>
+          <p className="text-sm text-gray-600 mt-1">{description}</p>
+          <div className="flex gap-4 mt-3 text-sm text-blue-600">
+            <a href={github} className="hover:underline">
+              Github
+            </a>
+            <a href={link} className="hover:underline">
+              Link
+            </a>
+          </div>
+        </div>
+      </div>
+    );
+};
+
+export default Card;
+
+
+
+
+____________ API Calling ________________________
+
+import axios from "axios";
+import { useEffect, useState } from "react";
+
+const ApiCalling = () => {
+  const [data, setData] = useState([]);
+
+  useEffect( () => {
+    const getData = async () => {
+      const response = await axios.get("https://picsum.photos/v2/list");
+      // const data = response.data;
+      console.log(response.data);
+      setData(response.data);
+    };
+
+    getData();
+  }, [])
+
+  return (
+    <div className="m-10">
+      <div className="">
+        {/* <button
+          onClick={getData}
+          className="bg-red-600 w-full px-3 py-1 text-white rounded"
+        >
+          Get Data
+        </button> */}
+      </div>
+      {data.map((val, idx) => {
+        return (
+          <div className="bg-blue-600 text-white" key={idx}>
+            <h1 className="text-center">{val.author}</h1>
+          </div>
+        );
+      })}
+    </div>
+  );
+};
+
+export default ApiCalling;

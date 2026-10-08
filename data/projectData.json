@@ -1,0 +1,128 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "John Doe",
+      "username": "johndoe",
+      "email": "john.doe@example.com",
+      "phone": "+1-555-0101",
+      "website": "johndoe.dev",
+      "address": {
+        "street": "123 Main St",
+        "suite": "Apt. 4B",
+        "city": "New York",
+        "zipcode": "10001",
+        "geo": {
+          "lat": "40.7128",
+          "lng": "-74.0060"
+        }
+      },
+      "company": {
+        "name": "Tech Corp",
+        "catchPhrase": "Innovating the future",
+        "bs": "synergize scalable e-markets"
+      },
+      "roles": ["admin", "developer"],
+      "isActive": true,
+      "createdAt": "2024-01-15T08:30:00Z"
+    },
+    {
+      "id": 2,
+      "name": "Jane Smith",
+      "username": "janesmith",
+      "email": "jane.smith@example.com",
+      "phone": "+1-555-0102",
+      "website": "janesmith.io",
+      "address": {
+        "street": "456 Oak Ave",
+        "suite": "Suite 200",
+        "city": "San Francisco",
+        "zipcode": "94102",
+        "geo": {
+          "lat": "37.7749",
+          "lng": "-122.4194"
+        }
+      },
+      "company": {
+        "name": "Design Studio",
+        "catchPhrase": "Designing experiences",
+        "bs": "iterate viral web-readiness"
+      },
+      "roles": ["designer"],
+      "isActive": true,
+      "createdAt": "2024-02-20T10:15:00Z"
+    },
+    {
+      "id": 3,
+      "name": "Bob Johnson",
+      "username": "bobjohnson",
+      "email": "bob.johnson@example.com",
+      "phone": "+1-555-0103",
+      "website": "bobjohnson.net",
+      "address": {
+        "street": "789 Pine Rd",
+        "suite": "Floor 3",
+        "city": "Chicago",
+        "zipcode": "60601",
+        "geo": {
+          "lat": "41.8781",
+          "lng": "-87.6298"
+        }
+      },
+      "company": {
+        "name": "Data Systems Inc",
+        "catchPhrase": "Data-driven decisions",
+        "bs": "aggregate real-time schemas"
+      },
+      "roles": ["analyst"],
+      "isActive": false,
+      "createdAt": "2024-03-05T14:45:00Z"
+    }
+  ],
+  "posts": [
+    {
+      "id": 101,
+      "userId": 1,
+      "title": "Getting Started with Fetch API",
+      "body": "The Fetch API provides a modern way to make HTTP requests in JavaScript. It returns Promises and is much cleaner than XMLHttpRequest.",
+      "tags": ["javascript", "fetch", "api"],
+      "likes": 42,
+      "publishedAt": "2024-04-01T09:00:00Z"
+    },
+    {
+      "id": 102,
+      "userId": 2,
+      "title": "UI Design Principles",
+      "body": "Good UI design focuses on clarity, consistency, and usability. Always consider the user's perspective when designing interfaces.",
+      "tags": ["design", "ui", "ux"],
+      "likes": 87,
+      "publishedAt": "2024-04-02T11:30:00Z"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1001,
+      "postId": 101,
+      "userId": 2,
+      "name": "Jane Smith",
+      "email": "jane.smith@example.com",
+      "body": "Great article! Very helpful for beginners.",
+      "createdAt": "2024-04-01T10:20:00Z"
+    },
+    {
+      "id": 1002,
+      "postId": 101,
+      "userId": 3,
+      "name": "Bob Johnson",
+      "email": "bob.johnson@example.com",
+      "body": "Thanks for sharing. Looking forward to more content like this.",
+      "createdAt": "2024-04-01T12:45:00Z"
+    }
+  ],
+  "meta": {
+    "total": 3,
+    "page": 1,
+    "perPage": 10,
+    "totalPages": 1
+  }
+}

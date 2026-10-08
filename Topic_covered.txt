@@ -2,6 +2,9 @@
 2. Real DOM vs Virtual DOM
 3. Setup
 4. JSX
-5. React Hooks
-    - useState - for state management
-6. Form Handling
+5. Components => component is an independent, reusable block of code that determines a piece of the UI
+6. Props (Pass data, render json data using props)
+7. React Hooks
+    - useState => for state management
+8. Form Handling
+9. Integrating API (axios)
